@@ -39,7 +39,7 @@ export default function HomePage() {
   if (selectedMovie) {
     for (let i = 1; i <= selectedMovie.rating; i++) {
       stars.push(
-        <span key={i} className="text-2xl text-yellow-500">
+        <span className="text-2xl text-yellow-500" key={i}>
           ★
         </span>,
       );
@@ -74,12 +74,14 @@ export default function HomePage() {
             </button>
           ))}
         </div>
-        <div className="bg-gray-100 p-4 rounded-xl">
-          {selectedMovie == null ? (
-             <p>Válassz egy filmet!</p>
+        <div className="rounded-xl bg-gray-100 p-4">
+          {selectedMovie === undefined ? (
+            <p className="text-gray-400 italic">Válassz egy filmet!</p>
           ) : (
             <>
-              <h2 className="text-xl font-bold">{selectedMovie.title} ({selectedMovie.year})</h2>
+              <h2 className="text-xl font-bold">
+                {selectedMovie.title} ({selectedMovie.year})
+              </h2>
               <p>{stars}</p>
               <div className="font-mono">
                 <p>|| → {selectedMovie.description || "Nincs leírás. (||)"}</p>
