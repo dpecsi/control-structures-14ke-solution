@@ -37,12 +37,19 @@ export default function HomePage() {
 
   const stars = [];
   if (selectedMovie) {
-    for (let i = 1; i <= selectedMovie.rating; i++) {
-      stars.push(
-        <span className="text-2xl text-yellow-500" key={i}>
-          ★
-        </span>,
-      );
+    for (let i = 1; i <= 5; i++) {
+      if (selectedMovie.rating >= i)
+        stars.push(
+          <span className="text-2xl text-yellow-500" key={i}>
+            ★
+          </span>,
+        );
+      else
+        stars.push(
+          <span className="text-2xl text-yellow-500" key={i}>
+            ☆
+          </span>,
+        );
     }
   }
 
