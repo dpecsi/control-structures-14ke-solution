@@ -90,6 +90,12 @@ export default function HomePage() {
             </>
           )}
         </div>
+        <div className="flex items-center gap-3">
+          <button className="btn btn-outline" onClick={() => setLikes((prev) => prev + 1)}>
+            👍 Tetszik
+          </button>
+          {likes > 0 && <p>{likes} ember kedvelte.</p>}
+        </div>
       </div>
     </main>
   );
